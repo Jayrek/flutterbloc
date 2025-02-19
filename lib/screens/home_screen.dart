@@ -26,25 +26,34 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () =>
                     Navigator.pushNamed(context, blocNavigationKey),
               ),
+              // const SizedBox(height: 10),
+              // CustomButtonWidget(
+              //   label: 'BlocBuilder',
+              //   onPressed: () {},
+              // ),
               const SizedBox(height: 10),
               CustomButtonWidget(
-                label: 'BlocBuilder',
-                onPressed: () {},
+                label: 'BlocSelector',
+                onPressed: () =>
+                    Navigator.pushNamed(context, blocSelectorNavigationKey),
               ),
               const SizedBox(height: 10),
               CustomButtonWidget(
                 label: 'BlocListener',
-                onPressed: () {},
+                onPressed: () =>
+                    Navigator.pushNamed(context, blocListenerNavigationKey),
               ),
               const SizedBox(height: 10),
               CustomButtonWidget(
-                label: 'BlocSelector',
-                onPressed: () {},
+                label: 'BlocConsumer',
+                onPressed: () =>
+                    Navigator.pushNamed(context, blocConsumerNavigationKey),
               ),
               const SizedBox(height: 10),
               CustomButtonWidget(
                 label: 'RepositoryProvider',
-                onPressed: () {},
+                onPressed: () => Navigator.pushNamed(
+                    context, repositoryProviderrNavigationKey),
               ),
             ],
           ),
