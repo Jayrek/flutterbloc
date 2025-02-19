@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutterbloc/screens/cubit/cubit_screen.dart';
 import 'package:flutterbloc/screens/home_screen.dart';
 
+import 'screens/bloc/bloc_screen.dart';
 import 'screens/cubit/mask_unmask_text_cubit.dart';
 import 'shared/constants.dart';
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         routes: {
           homeNavigationKey: (context) => const HomeScreen(),
           cubitNavigationKey: (context) => const CubitScreen(),
+          blocNavigationKey: (context) => const BlocScreen(),
         },
       ),
     );

@@ -23,7 +23,8 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 10),
               CustomButtonWidget(
                 label: 'BLoC',
-                onPressed: () {},
+                onPressed: () =>
+                    Navigator.pushNamed(context, blocNavigationKey),
               ),
               const SizedBox(height: 10),
               CustomButtonWidget(
