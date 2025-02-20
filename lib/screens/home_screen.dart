@@ -16,6 +16,12 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               CustomButtonWidget(
+                label: 'SetState',
+                onPressed: () =>
+                    Navigator.pushNamed(context, setStateNavigationKey),
+              ),
+              const SizedBox(height: 10),
+              CustomButtonWidget(
                 label: 'Cubit',
                 onPressed: () =>
                     Navigator.pushNamed(context, cubitNavigationKey),
@@ -26,11 +32,6 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () =>
                     Navigator.pushNamed(context, blocNavigationKey),
               ),
-              // const SizedBox(height: 10),
-              // CustomButtonWidget(
-              //   label: 'BlocBuilder',
-              //   onPressed: () {},
-              // ),
               const SizedBox(height: 10),
               CustomButtonWidget(
                 label: 'BlocSelector',

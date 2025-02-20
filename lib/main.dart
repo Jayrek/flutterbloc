@@ -14,6 +14,7 @@ import 'screens/bloc_selector/bloc_selector_screen.dart';
 import 'screens/cubit/mask_unmask_text_cubit.dart';
 import 'screens/repository_provider/auth_repository.dart';
 import 'screens/repository_provider/repository_provider_screen.dart';
+import 'screens/set_state/set_state_screen.dart';
 import 'shared/constants.dart';
 
 void main() {
@@ -30,22 +31,13 @@ class MyApp extends StatelessWidget {
       create: (context) => AuthRepository(),
       child: MultiBlocProvider(
         providers: [
+          BlocProvider(create: (context) => MaskUnmaskTextCubit()),
+          BlocProvider(create: (context) => AuthBlocSelectorBloc()),
+          BlocProvider(create: (context) => AuthBlocConsumerBloc()),
+          BlocProvider(create: (context) => MessageBlocListenerBloc()),
           BlocProvider(
-            create: (context) => MaskUnmaskTextCubit(),
-          ),
-          BlocProvider(
-            create: (context) => AuthBlocSelectorBloc(),
-          ),
-          BlocProvider(
-            create: (context) => AuthBlocConsumerBloc(),
-          ),
-          BlocProvider(
-            create: (context) => MessageBlocListenerBloc(),
-          ),
-          BlocProvider(
-            create: (context) => AuthRepositoryBloc(
-                authRepositotry: context.read<AuthRepository>()),
-          ),
+              create: (context) => AuthRepositoryBloc(
+                  authRepositotry: context.read<AuthRepository>())),
         ],
         child: MaterialApp(
           title: 'Flutter Demo',
@@ -54,6 +46,7 @@ class MyApp extends StatelessWidget {
           ),
           initialRoute: homeNavigationKey,
           routes: {
+            setStateNavigationKey: (context) => const SetStateScreen(),
             homeNavigationKey: (context) => const HomeScreen(),
             cubitNavigationKey: (context) => const CubitScreen(),
             blocNavigationKey: (context) => const BlocScreen(),
